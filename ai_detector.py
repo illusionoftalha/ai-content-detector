@@ -81,7 +81,7 @@ Return ONLY a JSON object — no markdown, no backticks, no explanation outside 
 Analyze vocabulary, sentence structure, repetition patterns, coherence, naturalness, and stylistic consistency."""
 
 def analyze(text):
-    api_key = GROQ_API_KEY if GROQ_API_KEY != "YOUR_GROQ_API_KEY_HERE" \
+    api_key = GROQ_API_KEY if GROQ_API_KEY and GROQ_API_KEY != "YOUR_GROQ_API_KEY_HERE" \
               else os.environ.get("GROQ_API_KEY", "")
     if not api_key:
         sys.exit("No API key found. Set GROQ_API_KEY in the script or as an env variable.")
